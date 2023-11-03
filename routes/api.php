@@ -20,3 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 // API PRODUK
 Route::get('/product', [ProdukController::class, 'produkall'])->name('api.produk');Route::get('/category', [CategoryController::class, 'categoryAll'])->name('api.produk');
+// Route::middleware('api')->group(function () {
+//     // Routes for API endpoints go here
+
+// });
+// Route::apiResource('category', CategoryController::class);
+// Route::apiResource('product', ProdukController::class);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
